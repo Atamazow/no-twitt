@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="logo text-center p-3"><span class="no">no</span>-<span class="twitt">twitter</span></div>
+            <div class="row justify-content-around mb-5">
+                <div class="col-3">
+                    <div class="twiti" (click)="all()">
+                        Все твиты
+                    </div>
+                </div>
+                <div class="col-3 align-items-center  ">
+                    <div class="material-icons  icon1   " (click)="onlyLikes()">
+                        favorite мои любимые
+                    </div>
+                </div>
+            </div>
+            <div *ngFor="let item of getItems()" class="message">
+                <div class="row align-items-center">
+                    <div class="col-3 mb-4">
+                        <img src="{{item.img}}" alt="ava" class="image">
+                    </div>
+                    <div class="col-8 mb-4">
+                        {{item.text}}
+                    </div>
+                    <div class="col-1">
+                        <span class="material-icons icon" [class.blue]="item.like" (click)="toggleLike(item.id)">
+                            thumb_up
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
